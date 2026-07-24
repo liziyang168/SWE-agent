@@ -5,28 +5,28 @@
       
       
       
-        <link rel="canonical" href="https://swe-agent.com/latest/usage/adding_custom_tools/">
+        <link rel="canonical" href="https://swe-agent.com/latest/usage/benchmarking/">
       
       
-        <link rel="prev" href="../competitive_runs/">
+        <link rel="prev" href="../batch_mode/">
       
       
-        <link rel="next" href="../whats_next/">
+        <link rel="next" href="../../faq/">
       
       
         
       
       
       <link rel="icon" href="../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Adding custom tools - SWE-agent documentation</title>
+        <title>Benchmarking - SWE-agent documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -56,31 +56,15 @@
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-      <link rel="stylesheet" href="../../assets/navigation_cards.css">
-    
       <link rel="stylesheet" href="../../assets/custom.css">
     
       <link rel="stylesheet" href="../../assets/mkdocstrings.css">
     
       <link rel="stylesheet" href="../../assets/image_theme.css">
     
-      <link rel="stylesheet" href="../../assets/bubbles.css">
-    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-SG2NC1GDRD"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-SG2NC1GDRD",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-SG2NC1GDRD",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -113,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#adding-custom-tools" class="md-skip">
+        <a href="#benchmarking" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +113,7 @@
               </button>
             
             
-📣 We now recommend <a href="https://mini-swe-agent.com">mini-swe-agent</a> instead of SWE-agent: Same performance, much more simple &amp; flexible
+This is the pre-release of SWE-agent 1.0. <a href="https://swe-agent.com/latest/installation/migration/">New features + migration guide.</a>
 
           </div>
           
@@ -169,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Adding custom tools
+              Benchmarking
             
           </span>
         </div>
@@ -748,10 +732,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -939,34 +919,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../competitive_runs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Competitive runs
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -986,7 +938,7 @@
   <span class="md-ellipsis">
     
   
-    Adding custom tools
+    Benchmarking
   
 
     
@@ -1004,7 +956,7 @@
   <span class="md-ellipsis">
     
   
-    Adding custom tools
+    Benchmarking
   
 
     
@@ -1030,10 +982,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#understanding-tool-structure" class="md-nav__link">
+  <a href="#inference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understanding Tool Structure
+        👩‍💻 Inference
       
     </span>
   </a>
@@ -1041,115 +993,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-write-the-command-script" class="md-nav__link">
+  <a href="#evaluation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Write the Command Script
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-define-the-tool-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Define the Tool Configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-tell-the-agent-to-use-the-new-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Tell the agent to use the new tool
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-lets-test-it" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Let's test it
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-tool-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advanced Tool Features
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced Tool Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multiple-commands-in-one-bundle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multiple Commands in One Bundle
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-python-libraries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Python Libraries
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#environment-variables-and-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Environment Variables and Context
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-the-registry-bundle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using the Registry Bundle
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#state-commands-and-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        State commands and more
+        🧪 Evaluation
       
     </span>
   </a>
@@ -1160,34 +1007,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../whats_next/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    What's next?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1247,8 +1066,6 @@
       
         
           
-        
-      
         
       
         
@@ -1451,34 +1268,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Command line interface
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../trajectories/" class="md-nav__link">
         
   
@@ -1519,12 +1308,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
     
     
     
@@ -1536,7 +1319,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1558,14 +1341,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1640,34 +1423,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Models
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../config/demonstrations/" class="md-nav__link">
         
   
@@ -1676,62 +1431,6 @@
     
   
     Demonstrations
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../config/tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tools
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../config/environments/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Environments
   
 
     
@@ -1777,10 +1476,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5">
         
           
-          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
             
   
   
@@ -1798,8 +1497,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2246,8 +1945,6 @@
       
         
       
-        
-      
     
     
     
@@ -2418,34 +2115,6 @@
     
   
     History processors
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/parsers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Action parsers
   
 
     
@@ -2707,10 +2376,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#understanding-tool-structure" class="md-nav__link">
+  <a href="#inference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understanding Tool Structure
+        👩‍💻 Inference
       
     </span>
   </a>
@@ -2718,115 +2387,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-write-the-command-script" class="md-nav__link">
+  <a href="#evaluation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Write the Command Script
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-define-the-tool-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Define the Tool Configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-tell-the-agent-to-use-the-new-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Tell the agent to use the new tool
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-lets-test-it" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Let's test it
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-tool-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advanced Tool Features
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced Tool Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multiple-commands-in-one-bundle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multiple Commands in One Bundle
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-python-libraries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Python Libraries
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#environment-variables-and-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Environment Variables and Context
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-the-registry-bundle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using the Registry Bundle
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#state-commands-and-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        State commands and more
+        🧪 Evaluation
       
     </span>
   </a>
@@ -2846,12 +2410,11 @@
               
               <article class="md-content__inner md-typeset">
                 
-
                   
 
 
   
-    <a href="https://github.com/SWE-agent/SWE-agent/edit/main/docs/usage/adding_custom_tools.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/SWE-agent/SWE-agent/edit/main/docs/usage/benchmarking.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -2859,267 +2422,64 @@
   
 
 
-<h1 id="adding-custom-tools">Adding Custom Tools</h1>
+<h1 id="benchmarking">Benchmarking</h1>
 <div class="admonition abstract">
-<p class="admonition-title">Adding custom tools to SWE-agent</p>
-<p>This tutorial walks you through creating and integrating custom tools into SWE-agent.
-We'll create a fun <code>print_cat</code> command that prints ASCII art of a cat for morale boost!</p>
-<p>Please read our <a href="../hello_world/">hello world</a> and <a href="../cl_tutorial/">command line basics</a> tutorials before proceeding.</p>
+<p class="admonition-title">Benchmarking on SWE-bench</p>
+<p>This page talks about benchmarking on SWE-bench to measure the software engineering capabilities of SWE-agent.
+Benchmarking for the other modes (programming challenges, cybersecurity) are coming soon.</p>
 </div>
-<h2 id="understanding-tool-structure">Understanding Tool Structure</h2>
-<p>Every SWE-agent tool is organized as a "bundle" - a directory containing:</p>
-<ol>
-<li><strong><code>config.yaml</code></strong> - Defines the tool's interface and documentation</li>
-<li><strong><code>bin/</code></strong> directory - Contains the executable scripts</li>
-<li><strong><code>install.sh</code></strong> (optional) - Sets up dependencies</li>
-<li><strong><code>lib/</code></strong> (optional) - Contains shared libraries or utilities</li>
-</ol>
-<p>Let's look at the simple <code>submit</code> tool structure:</p>
-<div class="highlight"><pre><span></span><code>tools/submit/
-├── config.yaml
-└── bin/
-    └── submit
+<p>There are two steps to the SWE-agent/SWE-bench pipeline. First SWE-agent takes an input GitHub issue and returns a pull request that attempts to fix it. We call that step <em>inference</em>. The second step (currently only available for issues in the SWE-bench benchmark) is to <em>evaluate</em> the pull request to verify that it has indeed fixed the issue.</p>
+<div class="admonition warning">
+<p class="admonition-title">Architectures</p>
+<p>At this moment, there are known issues with a small number of repositories that don't install properly for <code>arm64</code> / <code>aarch64</code> architecture computers. We're working on a fix, but if you'd like to run and evaluate on the entirety of SWE-bench, the easiest way is by using an <code>x86</code> machine.</p>
+</div>
+<h2 id="inference">👩‍💻 Inference <a name="inference"></a></h2>
+<p>Run SWE-agent on <a href="https://www.swebench.com/lite.html">SWE-bench Lite</a> and generate patches.</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>run.py<span class="w"> </span>--model_name<span class="w"> </span>gpt4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--per_instance_cost_limit<span class="w"> </span><span class="m">2</span>.00<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--config_file<span class="w"> </span>./config/default.yaml
 </code></pre></div>
-<h2 id="step-1-write-the-command-script">Step 1: Write the Command Script</h2>
-<p>First, let's create our <code>morale_boost</code> tool bundle:</p>
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>tools/morale_boost/bin
+<p>If you'd like to run on a <em>single</em> issue from SWE-bench, use the <code>--instance_filter</code> option as follows:
+</p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>run.py<span class="w"> </span>--model_name<span class="w"> </span>gpt4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--instance_filter<span class="w"> </span>marshmallow-code__marshmallow-1359
+</code></pre></div><p></p>
+<p>The above examples use the default value of <code>--data_path</code> (<code>princeton-nlp/SWE-bench_Lite</code>, which will be looked up from huggingface).
+You can specify any other huggingface datasets as well, or supply the path to a pre-downloaded dataset.
+By default, SWE-agent evaluates on the <code>dev</code> split of that dataset.
+You can change that by supplying the <code>--split</code> argument to the above commands (obviously you shouldn't tune your model on the <code>test</code> dataset).</p>
+<h2 id="evaluation">🧪 Evaluation <a name="evaluation"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Previous <code>evaluation/</code> scripts</p>
+<p>We have removed the scripts that were previously in the <code>evaluation/</code> subfolder.
+They were relatively thin wrappers around <code>swe-bench</code>. After the <code>swe-bench</code> 2.0 update, we recommend to use <code>swe-bench</code> directly.</p>
+</div>
+<p>You can directly run SWE-bench to evaluate the SWE-agent results.</p>
+<p>After installing SWE-bench, you can run <code>run_evaluation</code> as such:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>swebench.harness.run_evaluation<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--predictions_path<span class="w"> </span>/path/to/all_preds.jsonl<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--max_workers<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--run_id<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--split<span class="w"> </span>dev
 </code></pre></div>
-<p>Create the executable script that will be called when the agent runs your command:</p>
-<div class="highlight"><span class="filename">tools/morale_boost/bin/print_cat</span><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1"># print_cat - A morale-boosting ASCII cat printer!</span>
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"🐱 Here's a cat to boost your morale! 🐱"</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
-cat<span class="w"> </span><span class="s">&lt;&lt; 'EOF'</span>
-<span class="s"> /\_/\</span>
-<span class="s">( o.o )</span>
-<span class="s"> &gt; ^ &lt;</span>
-<span class="s"> _) (_</span>
-<span class="s">(_____)</span>
-<span class="s">EOF</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"You're doing great! Keep coding! 💪"</span>
-</code></pre></div>
-<p>If you're wondering about the strange <code>EOF</code> construct, those are called
-<a href="https://linuxize.com/post/bash-heredoc/">heredocs</a> and enable multiline
-arguments in bash.</p>
-<h2 id="step-2-define-the-tool-configuration">Step 2: Define the Tool Configuration</h2>
-<p>Create the <code>config.yaml</code> file that tells SWE-agent about your tool:</p>
-<div class="highlight"><span class="filename">tools/morale_boost/config.yaml</span><pre><span></span><code><span class="nt">tools</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">print_cat</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">signature</span><span class="p">:</span><span class="w"> </span><span class="s">"print_cat"</span>
-<span class="w">    </span><span class="nt">docstring</span><span class="p">:</span><span class="w"> </span><span class="s">"Prints</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">ASCII</span><span class="nv"> </span><span class="s">art</span><span class="nv"> </span><span class="s">cat</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">morale</span><span class="nv"> </span><span class="s">boost.</span><span class="nv"> </span><span class="s">Use</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">you</span><span class="nv"> </span><span class="s">need</span><span class="nv"> </span><span class="s">encouragement!"</span>
-<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tool Configuration Options</p>
-<p>The <code>config.yaml</code> supports various options:</p>
+<p>Head over to <a href="https://github.com/SWE-bench/SWE-bench/">SWE-bench</a> for details.</p>
+<div class="admonition note">
+<p class="admonition-title">Default split</p>
+<p>When running <code>swe-agent</code> it uses the SWE-bench lite <code>dev</code> split by default (i.e., when not specifying <code>--data_path</code> or <code>--split</code>).
+However, <code>swe-bench</code> assumes the SWE-bench lite <code>test</code> split by default.
+When you get warnings from <code>swe-bench</code> about missing instances, make sure you specify <code>--split test</code> or <code>--split dev</code> appropriately.</p>
+</div>
+<div class="grid cards">
 <ul>
-<li><strong><code>signature</code></strong>: How the command should be called (including arguments)</li>
-<li><strong><code>docstring</code></strong>: Description that helps the AI understand when to use this tool</li>
-<li><strong><code>arguments</code></strong>: List of arguments with types, descriptions, and whether they're required</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a6 6 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6 6 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20z"></path></svg></span> <strong>Something broken?</strong>
+    <a href="https://github.com/SWE-agent/SWE-agent/issues/new?template=bug_report.yml"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Report bug</a></p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 19h3v3h-3zm2-17c5.35.22 7.68 5.62 4.5 9.67-.83 1-2.17 1.66-2.83 2.5C13 15 13 16 13 17h-3c0-1.67 0-3.08.67-4.08.66-1 2-1.59 2.83-2.25C15.92 8.43 15.32 5.26 12 5a3 3 0 0 0-3 3H6a6 6 0 0 1 6-6"></path></svg></span> <strong>Something unclear?</strong>
+    <a href="https://github.com/SWE-agent/SWE-agent/issues/new?template=question.yml"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Ask question</a></p>
+</li>
 </ul>
 </div>
-<p>For a tool with arguments, it would look like this:</p>
-<div class="highlight"><span class="filename">Example with arguments</span><pre><span></span><code><span class="nt">tools</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">print_animal</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">signature</span><span class="p">:</span><span class="w"> </span><span class="s">"print_animal</span><span class="nv"> </span><span class="s">&lt;animal_type&gt;</span><span class="nv"> </span><span class="s">[--size=&lt;size&gt;]"</span>
-<span class="w">    </span><span class="nt">docstring</span><span class="p">:</span><span class="w"> </span><span class="s">"Prints</span><span class="nv"> </span><span class="s">ASCII</span><span class="nv"> </span><span class="s">art</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">specified</span><span class="nv"> </span><span class="s">animal"</span>
-<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">animal_type</span>
-<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Type</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">animal</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">print</span><span class="nv"> </span><span class="s">(cat,</span><span class="nv"> </span><span class="s">dog,</span><span class="nv"> </span><span class="s">elephant)"</span>
-<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">size</span>
-<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Size</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">art</span><span class="nv"> </span><span class="s">(small,</span><span class="nv"> </span><span class="s">medium,</span><span class="nv"> </span><span class="s">large)"</span>
-<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</code></pre></div>
-<h2 id="step-3-tell-the-agent-to-use-the-new-tool">Step 3: Tell the agent to use the new tool</h2>
-<p>Now you need to tell SWE-agent to use your new tool. Copy <code>config/default.yaml</code> to <code>config/my_custom_config.yaml</code>
-and make the following modification</p>
-<div class="highlight"><span class="filename">config/my_custom_config.yaml</span><pre><span></span><code><span class="nt">agent</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">templates</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">instance_template</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
-<span class="w">      </span><span class="no">(...)</span>
-
-<span class="w">      </span><span class="no">Don't forget to use `print_cat` when you need encouragement!</span>
-
-<span class="w">      </span><span class="no">Your thinking should be thorough and so it's fine if it's very long.</span>
-<span class="w">    </span><span class="nt">bundles</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tools/registry</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tools/edit_anthropic</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tools/review_on_submit_m</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tools/morale_boost</span><span class="w">  </span><span class="c1"># Add our custom tool bundle!</span>
-<span class="w">    </span><span class="c1"># everything else stays the same</span>
-</code></pre></div>
-<h2 id="step-4-lets-test-it">Step 4: Let's test it</h2>
-<p>Now you can test your tool by running SWE-agent with your custom configuration:</p>
-<div class="highlight"><pre><span></span><code>sweagent<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--config<span class="w"> </span>config/my_custom_config.yaml<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--agent.model.name<span class="o">=</span>gpt-4o<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--env.repo.github_url<span class="o">=</span>https://github.com/SWE-agent/test-repo<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--problem_statement.text<span class="o">=</span><span class="s2">"Add a simple hello world function to the repository. Feel free to use print_cat for morale!"</span>
-</code></pre></div>
-<p>The agent should now have access to your <code>print_cat</code> command and may use it during execution!</p>
-<h2 id="advanced-tool-features">Advanced Tool Features</h2>
-<h3 id="multiple-commands-in-one-bundle">Multiple Commands in One Bundle</h3>
-<p>You can define multiple commands in a single tool bundle:</p>
-<div class="highlight"><span class="filename">tools/morale_boost/config.yaml - Extended version</span><pre><span></span><code><span class="nt">tools</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">print_cat</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">signature</span><span class="p">:</span><span class="w"> </span><span class="s">"print_cat"</span>
-<span class="w">    </span><span class="nt">docstring</span><span class="p">:</span><span class="w"> </span><span class="s">"Prints</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">ASCII</span><span class="nv"> </span><span class="s">art</span><span class="nv"> </span><span class="s">cat</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">morale</span><span class="nv"> </span><span class="s">boost"</span>
-<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
-<span class="w">  </span><span class="nt">print_dog</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">signature</span><span class="p">:</span><span class="w"> </span><span class="s">"print_dog"</span>
-<span class="w">    </span><span class="nt">docstring</span><span class="p">:</span><span class="w"> </span><span class="s">"Prints</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">ASCII</span><span class="nv"> </span><span class="s">art</span><span class="nv"> </span><span class="s">dog</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">variety"</span>
-<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
-<span class="w">  </span><span class="nt">motivate</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">signature</span><span class="p">:</span><span class="w"> </span><span class="s">"motivate</span><span class="nv"> </span><span class="s">&lt;message&gt;"</span>
-<span class="w">    </span><span class="nt">docstring</span><span class="p">:</span><span class="w"> </span><span class="s">"Prints</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">motivational</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">ASCII</span><span class="nv"> </span><span class="s">art"</span>
-<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">message</span>
-<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"The</span><span class="nv"> </span><span class="s">motivational</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">display"</span>
-<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</code></pre></div>
-<p>Don't forget to create the corresponding scripts in the <code>bin/</code> directory!</p>
-<h3 id="using-python-libraries">Using Python Libraries</h3>
-<p>If you prefer Python, you can create Python-based tools:</p>
-<div class="highlight"><span class="filename">tools/morale_boost/bin/print_cat</span><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
-<span class="sd">"""</span>
-<span class="sd">A morale-boosting cat printer in Python!</span>
-<span class="sd">"""</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"🐱 Here's a cat to boost your morale! 🐱"</span><span class="p">)</span>
-</code></pre></div>
-<p>If your Python tool needs additional dependencies, create an <code>install.sh</code> script:</p>
-<div class="highlight"><span class="filename">tools/morale_boost/install.sh</span><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1"># This script runs when the tool bundle is installed</span>
-
-<span class="c1"># Example: Install Python packages</span>
-pip<span class="w"> </span>install<span class="w"> </span>cowsay
-pip<span class="w"> </span>install<span class="w"> </span>colorama
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"Morale boost tools installed! Ready to spread joy! 🎉"</span>
-</code></pre></div>
-<h3 id="environment-variables-and-context">Environment Variables and Context</h3>
-<p>Your tools can access environment variables and the current working context:</p>
-<div class="highlight"><span class="filename">Example using environment variables</span><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"Current working directory: </span><span class="nv">$PWD</span><span class="s2">"</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"Repository root: </span><span class="nv">$ROOT</span><span class="s2">"</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"My custom variable: </span><span class="nv">$MY_CUSTOM_VAR</span><span class="s2">"</span>
-</code></pre></div>
-<p>Adding environment variables in your config file can be a simple way of customizing your tools</p>
-<div class="highlight"><span class="filename">config/my_custom_config.yaml</span><pre><span></span><code><span class="nt">agent</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">tools</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">env_variables</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">PAGER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cat</span>
-<span class="w">      </span><span class="nt">MY_CUSTOM_VAR</span><span class="p">:</span><span class="w"> </span><span class="s">"Hello</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">config!"</span>
-<span class="w">      </span><span class="nt">DEBUG_MODE</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
-<span class="w">    </span><span class="c1"># ... rest of config</span>
-</code></pre></div>
-<p>For sensitive data like API keys, you can propagate environment variables from your host system:</p>
-<div class="highlight"><span class="filename">config/my_custom_config.yaml</span><pre><span></span><code><span class="nt">agent</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">tools</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">propagate_env_variables</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"OPENAI_API_KEY"</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"GITHUB_TOKEN"</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"MY_SECRET_KEY"</span>
-<span class="w">    </span><span class="c1"># ... rest of config</span>
-</code></pre></div>
-<p>Your tools can then access these variables:</p>
-<div class="highlight"><span class="filename">tools/morale_boost/bin/print_cat_with_api</span><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="nv">$GITHUB_TOKEN</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"🐱 Connected to GitHub! Ready to boost morale across repos!"</span>
-<span class="k">else</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"🐱 Just a local morale booster today!"</span>
-<span class="k">fi</span>
-</code></pre></div>
-<p>However, we mostly recommend to use the python bindings of the <code>registry</code> bundle for keeping internal
-state (instead of using environment variables).</p>
-<h3 id="using-the-registry-bundle">Using the Registry Bundle</h3>
-<p>The registry bundle provides a persistent key-value store that survives across tool calls. This is better than environment variables because
-you can store complex data structures (lists, dictionaries) as JSON.</p>
-<p><strong>Setting registry variables in your config:</strong></p>
-<div class="highlight"><span class="filename">config/my_custom_config.yaml</span><pre><span></span><code><span class="nt">agent</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">tools</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">registry_variables</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">MY_CUSTOM_SETTING</span><span class="p">:</span><span class="w"> </span><span class="s">"hello</span><span class="nv"> </span><span class="s">world"</span>
-<span class="w">      </span><span class="nt">MORALE_MESSAGES</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"You're</span><span class="nv"> </span><span class="s">doing</span><span class="nv"> </span><span class="s">great!"</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"Keep</span><span class="nv"> </span><span class="s">up</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">good</span><span class="nv"> </span><span class="s">work!"</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"Almost</span><span class="nv"> </span><span class="s">there!"</span>
-<span class="w">      </span><span class="nt">DEBUG_MODE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">bundles</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tools/registry</span><span class="w">  </span><span class="c1"># Always include this first!</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tools/morale_boost</span>
-</code></pre></div>
-<p><strong>Accessing registry variables in your Python tools:</strong></p>
-<div class="highlight"><span class="filename">tools/morale_boost/bin/print_motivational_cat</span><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="c1"># Get a simple value with a fallback</span>
-    <span class="n">setting</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"MY_CUSTOM_SETTING"</span><span class="p">,</span> <span class="s2">"default value"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Setting: </span><span class="si">{</span><span class="n">setting</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-    <span class="c1"># Get a list of messages</span>
-    <span class="n">messages</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"MORALE_MESSAGES"</span><span class="p">,</span> <span class="p">[])</span>
-    <span class="k">if</span> <span class="n">messages</span><span class="p">:</span>
-        <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
-        <span class="n">message</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"🐱 </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-    <span class="c1"># Set a value (persists across tool calls)</span>
-    <span class="n">registry</span><span class="p">[</span><span class="s2">"LAST_MORALE_BOOST"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"2024-01-15 10:30:00"</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Morale boosted! 🚀"</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</code></pre></div>
-<p><strong>Accessing registry variables in bash tools:</strong></p>
-<div class="highlight"><span class="filename">tools/morale_boost/bin/print_simple_cat</span><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1"># Read from registry using the _read_env helper</span>
-<span class="nv">CUSTOM_SETTING</span><span class="o">=</span><span class="k">$(</span>_read_env<span class="w"> </span><span class="s2">"MY_CUSTOM_SETTING"</span><span class="w"> </span><span class="s2">"default value"</span><span class="k">)</span>
-<span class="nv">DEBUG_MODE</span><span class="o">=</span><span class="k">$(</span>_read_env<span class="w"> </span><span class="s2">"DEBUG_MODE"</span><span class="w"> </span><span class="s2">"false"</span><span class="k">)</span>
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"🐱 Custom setting: </span><span class="nv">$CUSTOM_SETTING</span><span class="s2">"</span>
-
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$DEBUG_MODE</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"true"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Debug mode is enabled!"</span>
-<span class="k">fi</span>
-</code></pre></div>
-<p>The registry is particularly useful for complex tools that need to maintain state across multiple invocations, like the <code>review_on_submit_m</code> tool that tracks submission stages.</p>
-<h2 id="state-commands-and-more">State commands and more</h2>
-<p>Take a look at our <a href="../../config/tools/">tool documentation</a>.</p>
-<div class="grid cards">
-  <a href="https://github.com/SWE-agent/SWE-agent/issues/new" class="nav-card-link">
-    <div class="nav-card">
-      <div class="nav-card-header">
-        <span class="material-icons nav-card-icon">bug_report</span>
-        <span class="nav-card-title">Something broken/unclear?</span>
-      </div>
-      <p class="nav-card-description">Open an issue on GitHub!</p>
-    </div>
-  </a>
-
-  <a href="https://swe-bench.slack.com" class="nav-card-link">
-    <div class="nav-card">
-      <div class="nav-card-header">
-        <span class="material-icons nav-card-icon">help</span>
-        <span class="nav-card-title">Open-ended discussions</span>
-      </div>
-      <p class="nav-card-description">Join our Slack!</p>
-    </div>
-  </a>
-</div>
 
 
 
@@ -3128,114 +2488,11 @@ you can store complex data structures (lists, dictionaries) as JSON.</p>
 
 
 
-
-  
 
 
 
 
                 
-
-
-<div id="maintenance-popup-overlay" style="
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(4px);
-  align-items: center;
-  justify-content: center;
-">
-  <div style="
-    background: var(--md-default-bg-color, #fff);
-    color: var(--md-default-fg-color, #333);
-    border-radius: 12px;
-    padding: 2.5rem 2rem 2rem;
-    max-width: 800px;
-    width: 90%;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    text-align: center;
-    font-family: var(--md-text-font-family);
-  ">
-    <div style="font-size: 0.92rem; line-height: 1.6; margin: 0 0 1.8rem;">
-      <p style="margin: 0 0 0.4rem;">SWE-agent has been superseded by <strong>mini-swe-agent</strong>.</p>
-      <p style="margin: 0 0 0.4rem;">mini-swe-agent is simpler &amp; more flexible while still being as performant.</p>
-      <p style="margin: 0;">See the <a href="https://mini-swe-agent.com/latest/faq/">FAQ</a> for more details about why you should switch.
-      <br>SWE-agent is now in maintenance-only mode.</p>
-    </div>
-    <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
-      <a href="https://mini-swe-agent.com" style="
-        display: inline-block;
-        padding: 0.6rem 1.4rem;
-        border-radius: 6px;
-        background: #0099ff;
-        color: #fff;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 0.88rem;
-        transition: background 0.2s;
-      " onmouseover="this.style.background='#007acc'" onmouseout="this.style.background='#0099ff'">
-        Check out mini-swe-agent
-      </a>
-      <button onclick="dismissMaintenancePopup()" style="
-        padding: 0.6rem 1.4rem;
-        border-radius: 6px;
-        background: transparent;
-        border: 1px solid var(--md-default-fg-color--lighter, #ccc);
-        color: var(--md-default-fg-color, #333);
-        cursor: pointer;
-        font-size: 0.88rem;
-        transition: background 0.2s;
-      " onmouseover="this.style.background='var(--md-code-bg-color, #eee)'" onmouseout="this.style.background='transparent'">
-        Continue to SWE-agent
-      </button>
-    </div>
-  </div>
-</div>
-
-<script>
-function dismissMaintenancePopup() {
-  document.getElementById('maintenance-popup-overlay').style.display = 'none';
-  sessionStorage.setItem('maintenance-popup-dismissed', '1');
-}
-
-(function() {
-  if (!sessionStorage.getItem('maintenance-popup-dismissed')) {
-    var overlay = document.getElementById('maintenance-popup-overlay');
-    overlay.style.display = 'flex';
-    overlay.addEventListener('click', function(e) {
-      if (e.target === overlay) dismissMaintenancePopup();
-    });
-  }
-})();
-</script>
-
-<!-- Floating Bubbles -->
-<div class="floating-bubbles">
-<div class="floating-bubbles-title">Our projects</div>
-  <a href="https://mini-swe-agent.com/" class="bubble" title="Mini-SWE-Agent">
-    <img src="../../assets/mini_logo.svg" alt="Mini-SWE-Agent">
-    <span class="bubble-tooltip">Mini-SWE-Agent</span>
-  </a>
-  <a href="https://swe-rex.com/" class="bubble" title="SWE-rex">
-    <img src="../../assets/swerex_logo.svg" alt="SWE-rex">
-    <span class="bubble-tooltip">SWE-ReX</span>
-  </a>
-  <a href="https://swesmith.com" class="bubble" title="SWE-smith">
-    <img src="../../assets/swesmith_logo.png" alt="SWE-smith">
-    <span class="bubble-tooltip">SWE-smith</span>
-  </a>
-  <a href="https://swebench.com" class="bubble" title="SWE-bench">
-    <img src="../../assets/swebench_logo.png" alt="SWE-bench">
-    <span class="bubble-tooltip">SWE-bench</span>
-  </a>
-  <a href="https://www.swebench.com/sb-cli/" class="bubble" title="sb-cli">
-    <img src="../../assets/sbcli_logo.svg" alt="sb-cli">
-    <span class="bubble-tooltip">sb-cli</span>
-  </a>
-</div>
-
               </article>
             </div>
           
@@ -3258,7 +2515,7 @@ function dismissMaintenancePopup() {
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../competitive_runs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Competitive runs">
+          <a href="../batch_mode/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Batch mode">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -3268,20 +2525,20 @@ function dismissMaintenancePopup() {
                 Previous
               </span>
               <div class="md-ellipsis">
-                Competitive runs
+                Batch mode
               </div>
             </div>
           </a>
         
         
           
-          <a href="../whats_next/" class="md-footer__link md-footer__link--next" aria-label="Next: What's next?">
+          <a href="../../faq/" class="md-footer__link md-footer__link--next" aria-label="Next: FAQ">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                What's next?
+                FAQ
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3321,7 +2578,7 @@ function dismissMaintenancePopup() {
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.top", "content.action.edit", "navigation.footer", "content.code.copy", "content.footnote.tooltips", "header.autohide", "announce.dismiss", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../assets/js/sh-annotation.js"></script>
       
@@ -3329,4 +2586,4 @@ function dismissMaintenancePopup() {
   
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
-</script></body></html><!-- Maintenance mode popup -->
+</script></body></html>
